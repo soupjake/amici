@@ -57,6 +57,7 @@ export const Search = () => {
                     onSearch={onSearch}
                     onSelect={onSelect}
                     options={options}
+                    variant="borderless"
                 />
             </Flex>
         </Flex>
@@ -65,7 +66,8 @@ export const Search = () => {
 
 const styles: Record<string, CSSProperties> = {
     autocomplete: {
-        border: 'none',
+        background: 'white',
+        borderRadius: 6,
         boxShadow: shadow,
         width: '100%',
     },
