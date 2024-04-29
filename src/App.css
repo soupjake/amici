@@ -1,0 +1,14 @@
+#root {
+    min-height: 100vh;
+    min-width: 100vw;
+}
+
+body {
+    margin: 0;
+    background-image: linear-gradient(
+        to bottom left,
+        #fbfffe,
+        #f7fdfd,
+        #97a2a8
+    );
+}
