@@ -1,11 +1,47 @@
-import { Flex, Input, Typography } from 'antd'
-import { SearchOutlined, UsergroupAddOutlined } from '@ant-design/icons'
+import { AutoComplete, Flex, Typography } from 'antd'
+import { UsergroupAddOutlined } from '@ant-design/icons'
 import { primary, shadow } from '../../styles/theme'
-import { CSSProperties } from 'react'
+import { CSSProperties, useEffect, useState } from 'react'
+import { useAppSelector } from '../../hooks/storeHooks'
+import { selectFriends } from '../../store/selectors/friendSelectors'
+import { DefaultOptionType } from 'antd/es/select'
+import { mapFriendsToOptions } from '../../utils/friendhelper'
+import { useNavigate } from 'react-router-dom'
 
 const { Title } = Typography
 
 export const Search = () => {
+    const friends = useAppSelector(selectFriends)
+    const navigate = useNavigate()
+
+    const [options, setOptions] = useState<DefaultOptionType[]>([])
+
+    useEffect(() => {
+        if (friends.length) {
+            setOptions(mapFriendsToOptions(friends))
+        }
+    }, [friends])
+
+    const onSearch = (value: string) => {
+        setOptions(() => {
+            if (value) {
+                return mapFriendsToOptions(
+                    friends.filter(
+                        (friend) =>
+                            friend.name.includes(value) ||
+                            friend.jobtitle.includes(value),
+                    ),
+                )
+            }
+
+            return mapFriendsToOptions(friends)
+        })
+    }
+
+    const onSelect = (friendId: string) => {
+        navigate(`/friend/${friendId}`)
+    }
+
     return (
         <Flex justify="center" style={styles.container}>
             <Flex
@@ -15,11 +51,12 @@ export const Search = () => {
                 style={styles.containerItem}>
                 <UsergroupAddOutlined style={styles.userIcon} />
                 <Title style={styles.title}>amichi</Title>
-                <Input
-                    style={styles.input}
+                <AutoComplete
+                    style={styles.autocomplete}
                     placeholder="Search..."
-                    size="large"
-                    suffix={<SearchOutlined style={styles.inputIcon} />}
+                    onSearch={onSearch}
+                    onSelect={onSelect}
+                    options={options}
                 />
             </Flex>
         </Flex>
@@ -27,18 +64,16 @@ export const Search = () => {
 }
 
 const styles: Record<string, CSSProperties> = {
+    autocomplete: {
+        border: 'none',
+        boxShadow: shadow,
+        width: '100%',
+    },
     container: {
-        paddingTop: 'calc(50% - 146px)',
+        paddingTop: 'calc(50vh - 146px)',
     },
     containerItem: {
         width: '80%',
-    },
-    input: {
-        border: 'none',
-        boxShadow: shadow,
-    },
-    inputIcon: {
-        color: primary,
     },
     title: {
         color: primary,
