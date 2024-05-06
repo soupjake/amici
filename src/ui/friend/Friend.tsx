@@ -1,18 +1,20 @@
-import Flex from 'antd/es/flex'
-import Typography from 'antd/es/typography'
+import './Friend.css'
+
 import MessageOutlined from '@ant-design/icons/MessageOutlined'
-import { useParams } from 'react-router-dom'
-import { useAppSelector } from '../../hooks/storeHooks'
-import { selectFriendById } from '../../store/selectors/friendSelectors'
-import Rate from 'antd/es/rate'
+import Flex from 'antd/es/flex'
 import FloatButton from 'antd/es/float-button'
-import { ChangeEvent, useState } from 'react'
-import Modal from 'antd/es/modal'
 import TextArea from 'antd/es/input/TextArea'
+import Modal from 'antd/es/modal'
+import Rate from 'antd/es/rate'
+import Typography from 'antd/es/typography'
+import { ChangeEvent, useState } from 'react'
+import { useParams } from 'react-router-dom'
+
 import carmen from '../../assets/carmen.jpg'
 import cus from '../../assets/cus.jpg'
 import sydney from '../../assets/sydney.jpg'
-import './Friend.css'
+import { useAppSelector } from '../../hooks/storeHooks'
+import { selectFriendById } from '../../store/selectors/friendSelectors'
 
 const { Title } = Typography
 

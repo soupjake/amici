@@ -1,14 +1,14 @@
-import Typography from 'antd/es/typography'
-import Flex from 'antd/es/flex'
-import AutoComplete from 'antd/es/auto-complete'
-import UsergroupAddOutlined from '@ant-design/icons/UsergroupAddOutlined'
-import { useEffect, useState } from 'react'
+import './Search.css'
+
+import { UsergroupAddOutlined } from '@ant-design/icons'
+import { AutoComplete, Flex, Typography } from 'antd'
 import { DefaultOptionType } from 'antd/es/select'
+import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+
 import { useAppSelector } from '../../hooks/storeHooks'
 import { selectFriends } from '../../store/selectors/friendSelectors'
 import { mapFriendsToOptions } from '../../utils/friendhelper'
-import './Search.css'
 
 const { Title } = Typography
 
