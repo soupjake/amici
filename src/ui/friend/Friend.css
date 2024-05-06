@@ -1,0 +1,37 @@
+.friend-container {
+    background-image: linear-gradient(
+        to bottom left,
+        #537670,
+        #2c3f3b,
+        #131510
+    );
+    min-height: 100vh;
+    min-width: 100vw;
+}
+
+.friend-view {
+    background-image: linear-gradient(
+        to bottom,
+        rgba(251, 255, 254, 1),
+        rgba(255, 255, 255, 0)
+    );
+    padding-top: calc(50vh - 146px);
+    width: 80%;
+}
+
+.friend-title {
+    color: white !important;
+}
+
+.friend-user-icon {
+    color: white;
+    font-size: 100px;
+}
+
+.friend-rating {
+    color: white;
+}
+
+.friend-message-icon {
+    color: #263933;
+}

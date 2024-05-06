@@ -1,17 +1,23 @@
-import { Search } from './ui/pages/Search'
 import { useEffect } from 'react'
 import { getFriends } from './store/thunks/friendThunks'
 import { useAppDispatch } from './hooks/storeHooks'
-import './App.css'
+import { Route, Routes } from 'react-router-dom'
+import { Search } from './ui/search/Search'
+import { Friend } from './ui/friend/Friend'
 
-function App() {
+export const App = () => {
     const dispatch = useAppDispatch()
 
     useEffect(() => {
         dispatch(getFriends())
     }, [dispatch])
 
-    return <Search />
+    return (
+        <Routes>
+            <Route path="/">
+                <Route index element={<Search />} />
+                <Route path="/friend/:friendId" element={<Friend />} />
+            </Route>
+        </Routes>
+    )
 }
-
-export default App

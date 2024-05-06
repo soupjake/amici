@@ -1,12 +1,14 @@
-import { AutoComplete, Flex, Typography } from 'antd'
-import { UsergroupAddOutlined } from '@ant-design/icons'
-import { primary, shadow } from '../../styles/theme'
-import { CSSProperties, useEffect, useState } from 'react'
+import Typography from 'antd/es/typography'
+import Flex from 'antd/es/flex'
+import AutoComplete from 'antd/es/auto-complete'
+import UsergroupAddOutlined from '@ant-design/icons/UsergroupAddOutlined'
+import { useEffect, useState } from 'react'
+import { DefaultOptionType } from 'antd/es/select'
+import { useNavigate } from 'react-router-dom'
 import { useAppSelector } from '../../hooks/storeHooks'
 import { selectFriends } from '../../store/selectors/friendSelectors'
-import { DefaultOptionType } from 'antd/es/select'
 import { mapFriendsToOptions } from '../../utils/friendhelper'
-import { useNavigate } from 'react-router-dom'
+import './Search.css'
 
 const { Title } = Typography
 
@@ -43,16 +45,16 @@ export const Search = () => {
     }
 
     return (
-        <Flex justify="center" style={styles.container}>
+        <Flex className="search-container" align="start" justify="center">
             <Flex
                 vertical
                 align="center"
                 justify="center"
-                style={styles.containerItem}>
-                <UsergroupAddOutlined style={styles.userIcon} />
-                <Title style={styles.title}>amichi</Title>
+                className="search-view">
+                <UsergroupAddOutlined className="search-user-icon" />
+                <Title className="search-title">amichi</Title>
                 <AutoComplete
-                    style={styles.autocomplete}
+                    className="search-autocomplete"
                     placeholder="Search..."
                     onSearch={onSearch}
                     onSelect={onSelect}
@@ -62,26 +64,4 @@ export const Search = () => {
             </Flex>
         </Flex>
     )
-}
-
-const styles: Record<string, CSSProperties> = {
-    autocomplete: {
-        background: 'white',
-        borderRadius: 6,
-        boxShadow: shadow,
-        width: '100%',
-    },
-    container: {
-        paddingTop: 'calc(50vh - 146px)',
-    },
-    containerItem: {
-        width: '80%',
-    },
-    title: {
-        color: primary,
-    },
-    userIcon: {
-        color: primary,
-        fontSize: 100,
-    },
 }

@@ -1,0 +1,31 @@
+.search-container {
+    background-image: linear-gradient(
+        to bottom left,
+        #fbfffe,
+        #f7fdfd,
+        #97a2a8
+    );
+    padding-top: calc(50vh - 146px);
+    min-height: 100vh;
+    min-width: 100vw;
+}
+
+.search-view {
+    width: 80%;
+}
+
+.search-title {
+    color: #263933 !important;
+}
+
+.search-user-icon {
+    color: #263933;
+    font-size: 100px;
+}
+
+.search-autocomplete {
+    background: white;
+    border-radius: 6px;
+    box-shadow: rgba(0, 0, 0, 0.08) 0px 6px 16px;
+    width: 100%;
+}
