@@ -1,6 +1,5 @@
 import Flex from 'antd/es/flex'
 import Typography from 'antd/es/typography'
-import UserOutlined from '@ant-design/icons/UserOutlined'
 import MessageOutlined from '@ant-design/icons/MessageOutlined'
 import { useParams } from 'react-router-dom'
 import { useAppSelector } from '../../hooks/storeHooks'
@@ -10,6 +9,9 @@ import FloatButton from 'antd/es/float-button'
 import { ChangeEvent, useState } from 'react'
 import Modal from 'antd/es/modal'
 import TextArea from 'antd/es/input/TextArea'
+import carmen from '../../assets/carmen.jpg'
+import cus from '../../assets/cus.jpg'
+import sydney from '../../assets/sydney.jpg'
 import './Friend.css'
 
 const { Title } = Typography
@@ -38,6 +40,18 @@ export const Friend = () => {
         setMessage(event.target.value)
     }
 
+    const getImage = () => {
+        if (friend.image === 'carmen') {
+            return carmen
+        }
+
+        if (friend.image === 'cus') {
+            return cus
+        }
+
+        return sydney
+    }
+
     return (
         <Flex className="friend-container" align="start" justify="center">
             <Flex
@@ -45,11 +59,15 @@ export const Friend = () => {
                 align="center"
                 justify="center"
                 className="friend-view">
-                <UserOutlined className="friend-user-icon" />
-                <Title className="friend-title" level={3}>
-                    {friendId}
-                </Title>
-                <Rate value={friend.rating} className="friend-rating" />
+                <Flex className="friend-image-view">
+                    <img className="friend-image" src={getImage()} />
+                </Flex>
+                <Flex vertical align="center" className="friend-info">
+                    <Title className="friend-title" level={3}>
+                        {friend.name}
+                    </Title>
+                    <Rate value={friend.rating} className="friend-rating" />
+                </Flex>
                 <FloatButton
                     icon={
                         <MessageOutlined
@@ -57,7 +75,7 @@ export const Friend = () => {
                             onClick={onClickMessage}
                         />
                     }
-                />{' '}
+                />
                 <Modal
                     title="Message"
                     centered

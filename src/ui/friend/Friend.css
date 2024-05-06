@@ -10,13 +10,25 @@
 }
 
 .friend-view {
-    background-image: linear-gradient(
-        to bottom,
-        rgba(251, 255, 254, 1),
-        rgba(255, 255, 255, 0)
-    );
-    padding-top: calc(50vh - 146px);
     width: 80%;
+}
+
+.friend-image-view {
+    mask-image: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 1) 50%,
+        transparent 100%
+    );
+}
+
+.friend-image {
+    width: 100%;
+    height: auto;
+    vertical-align: middle;
+}
+
+.friend-info {
+    margin-top: -60px;
 }
 
 .friend-title {
