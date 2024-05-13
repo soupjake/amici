@@ -1,5 +1,6 @@
 {
     "name": "amici",
+    "homepage": "https://soupjake.github.io/amici/",
     "private": true,
     "version": "0.0.0",
     "type": "module",
