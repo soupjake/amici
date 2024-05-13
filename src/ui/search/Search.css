@@ -12,6 +12,7 @@
 
 .search-view {
     width: 80%;
+    max-width: 500px;
 }
 
 .search-title {
