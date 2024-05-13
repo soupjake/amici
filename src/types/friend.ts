@@ -4,4 +4,6 @@ export type Friend = {
     jobtitle: string
     rating: number
     image: string
+    location: string
+    sector: string
 }

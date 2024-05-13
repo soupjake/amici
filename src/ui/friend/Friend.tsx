@@ -1,12 +1,8 @@
 import './Friend.css'
 
-import MessageOutlined from '@ant-design/icons/MessageOutlined'
-import Flex from 'antd/es/flex'
-import FloatButton from 'antd/es/float-button'
+import { MessageOutlined, OpenAIOutlined } from '@ant-design/icons'
+import { Flex, FloatButton, Modal, Rate, Typography } from 'antd'
 import TextArea from 'antd/es/input/TextArea'
-import Modal from 'antd/es/modal'
-import Rate from 'antd/es/rate'
-import Typography from 'antd/es/typography'
 import { ChangeEvent, useState } from 'react'
 import { useParams } from 'react-router-dom'
 
@@ -16,7 +12,7 @@ import sydney from '../../assets/sydney.jpg'
 import { useAppSelector } from '../../hooks/storeHooks'
 import { selectFriendById } from '../../store/selectors/friendSelectors'
 
-const { Title } = Typography
+const { Text } = Typography
 
 export const Friend = () => {
     const { friendId } = useParams()
@@ -65,12 +61,15 @@ export const Friend = () => {
                     <img className="friend-image" src={getImage()} />
                 </Flex>
                 <Flex vertical align="center" className="friend-info">
-                    <Title className="friend-title" level={3}>
-                        {friend.name}
-                    </Title>
-                    <Rate value={friend.rating} className="friend-rating" />
+                    <Text className="friend-title">{friend.name}</Text>
+                    <Rate
+                        value={friend.rating}
+                        className="friend-rating"
+                        character={<OpenAIOutlined />}
+                    />
                 </Flex>
                 <FloatButton
+                    className="friend-fab"
                     icon={
                         <MessageOutlined
                             className="friend-message-icon"

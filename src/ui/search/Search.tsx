@@ -1,6 +1,6 @@
 import './Search.css'
 
-import { UsergroupAddOutlined } from '@ant-design/icons'
+import { OpenAIOutlined } from '@ant-design/icons'
 import { AutoComplete, Flex, Typography } from 'antd'
 import { DefaultOptionType } from 'antd/es/select'
 import { useEffect, useState } from 'react'
@@ -10,7 +10,7 @@ import { useAppSelector } from '../../hooks/storeHooks'
 import { selectFriends } from '../../store/selectors/friendSelectors'
 import { mapFriendsToOptions } from '../../utils/friendhelper'
 
-const { Title } = Typography
+const { Text } = Typography
 
 export const Search = () => {
     const friends = useAppSelector(selectFriends)
@@ -51,8 +51,8 @@ export const Search = () => {
                 align="center"
                 justify="center"
                 className="search-view">
-                <UsergroupAddOutlined className="search-user-icon" />
-                <Title className="search-title">amichi</Title>
+                <OpenAIOutlined className="search-user-icon" />
+                <Text className="search-title">amichi</Text>
                 <AutoComplete
                     className="search-autocomplete"
                     placeholder="Search..."

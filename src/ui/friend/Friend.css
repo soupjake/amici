@@ -2,7 +2,7 @@
     background-image: linear-gradient(
         to bottom left,
         #537670,
-        #2c3f3b,
+        var(--main-dark),
         #131510
     );
     min-height: 100vh;
@@ -32,18 +32,25 @@
 }
 
 .friend-title {
-    color: white !important;
+    color: var(--main-light);
+    font-size: 38px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+.friend-fab .ant-float-btn-body {
+    background-color: var(--main-light);
 }
 
 .friend-user-icon {
-    color: white;
+    color: var(--main-light);
     font-size: 100px;
 }
 
 .friend-rating {
-    color: white;
+    color: var(--main-light);
 }
 
 .friend-message-icon {
-    color: #263933;
+    color: var(--main-dark);
 }

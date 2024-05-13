@@ -1,4 +1,4 @@
-.drawer-nav {
+.drawer-nav-container {
     position: absolute;
     top: 0;
     right: 0;
@@ -6,9 +6,31 @@
 }
 
 .drawer-nav-dark-icon {
-    color: #263933;
+    color: var(--main-dark);
 }
 
 .drawer-nav-light-icon {
-    color: #fbfffe;
+    color: var(--main-light);
+}
+
+.drawer-nav-text {
+    color: var(--main-light);
+    margin-left: 8px;
+}
+
+.drawer-nav .ant-drawer-header {
+    background: var(--main-dark);
+    border-bottom-color: var(--main-light);
+}
+
+.drawer-nav .ant-drawer-title {
+    color: var(--main-light);
+}
+
+.drawer-nav .ant-drawer-close {
+    color: var(--main-light);
+}
+
+.drawer-nav .ant-drawer-body {
+    background: var(--main-dark);
 }

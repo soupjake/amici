@@ -1,9 +1,12 @@
 import './DrawerNav.css'
 
-import MenuOutlined from '@ant-design/icons/MenuOutlined'
-import Drawer from 'antd/es/drawer'
-import Flex from 'antd/es/flex'
-import Typography from 'antd/es/typography'
+import {
+    ContactsOutlined,
+    MenuOutlined,
+    SearchOutlined,
+    StarOutlined,
+} from '@ant-design/icons'
+import { Drawer, Flex, Typography } from 'antd'
 import { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 
@@ -28,18 +31,26 @@ export const DrawerNav = () => {
             : 'drawer-nav-light-icon'
 
     return (
-        <div className="drawer-nav">
+        <div className="drawer-nav-container">
             <MenuOutlined className={iconClassname} onClick={onOpen} />
-            <Drawer title="amici" onClose={onClose} open={open} width={150}>
+            <Drawer
+                className="drawer-nav"
+                title="amici"
+                onClose={onClose}
+                open={open}
+                width={150}>
                 <Flex vertical>
                     <Link to="/" onClick={onClose}>
-                        <Text>Search</Text>
+                        <SearchOutlined className="drawer-nav-light-icon" />
+                        <Text className="drawer-nav-text">Search</Text>
                     </Link>
                     <Link to="/" onClick={onClose}>
-                        <Text>Favourites</Text>
+                        <StarOutlined className="drawer-nav-light-icon" />
+                        <Text className="drawer-nav-text">Favourites</Text>
                     </Link>
                     <Link to="/" onClick={onClose}>
-                        <Text>Admin</Text>
+                        <ContactsOutlined className="drawer-nav-light-icon" />
+                        <Text className="drawer-nav-text">Admin</Text>
                     </Link>
                 </Flex>
             </Drawer>
