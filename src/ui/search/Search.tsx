@@ -30,8 +30,12 @@ export const Search = () => {
                 return mapFriendsToOptions(
                     friends.filter(
                         (friend) =>
-                            friend.name.includes(value) ||
-                            friend.jobtitle.includes(value),
+                            friend.name
+                                .toLowerCase()
+                                .includes(value.toLowerCase()) ||
+                            friend.jobtitle
+                                .toLocaleLowerCase()
+                                .includes(value.toLowerCase()),
                     ),
                 )
             }

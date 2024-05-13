@@ -1,14 +1,14 @@
 import './Friend.css'
 
 import { MessageOutlined, OpenAIOutlined, StarFilled } from '@ant-design/icons'
-import { Flex, FloatButton, Rate, Typography } from 'antd'
-import { useState } from 'react'
+import { Flex, FloatButton, Modal, Rate, Typography } from 'antd'
+import TextArea from 'antd/es/input/TextArea'
+import { ChangeEvent, useState } from 'react'
 import { useParams } from 'react-router-dom'
 
 import { useAppSelector } from '../../hooks/storeHooks'
 import { selectFriendById } from '../../store/selectors/friendSelectors'
 import { FriendImage } from '../shared/FriendImage'
-import { MessageModal } from './MessageModal'
 
 const { Text } = Typography
 
@@ -17,6 +17,7 @@ export const Friend = () => {
     const friend = useAppSelector(selectFriendById(friendId))
 
     const [openMessage, setOpenMessage] = useState(false)
+    const [message, setMessage] = useState('')
 
     if (!friend) {
         return null
@@ -24,6 +25,15 @@ export const Friend = () => {
 
     const onClickMessage = () => {
         setOpenMessage(true)
+    }
+
+    const onCloseMessage = () => {
+        setMessage('')
+        setOpenMessage(false)
+    }
+
+    const onChangeMessage = (event: ChangeEvent<HTMLTextAreaElement>) => {
+        setMessage(event.target.value)
     }
 
     return (
@@ -71,7 +81,19 @@ export const Friend = () => {
                     />
                 }
             />
-            <MessageModal open={openMessage} setOpen={setOpenMessage} />
+            <Modal
+                title="Message"
+                centered
+                open={openMessage}
+                onOk={onCloseMessage}
+                onCancel={onCloseMessage}>
+                <TextArea
+                    value={message}
+                    onChange={onChangeMessage}
+                    placeholder="Type here..."
+                    autoSize={{ minRows: 3, maxRows: 3 }}
+                />
+            </Modal>
         </>
     )
 }
