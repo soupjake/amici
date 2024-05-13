@@ -9,7 +9,7 @@ export function fetchFriends() {
                         {
                             id: 'friend1',
                             name: 'Carmen Berzatto',
-                            jobtitle: 'Chef',
+                            jobtitle: 'Head Chef',
                             rating: 3,
                             image: 'carmen',
                             location: 'Chelsea',
@@ -18,7 +18,7 @@ export function fetchFriends() {
                         {
                             id: 'friend2',
                             name: 'Richard Jerimovich',
-                            jobtitle: 'Tailor',
+                            jobtitle: 'Executive Tailor',
                             rating: 4,
                             image: 'cus',
                             location: 'Victoria',

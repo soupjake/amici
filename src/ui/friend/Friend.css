@@ -14,6 +14,7 @@
 }
 
 .friend-image-view {
+    position: relative;
     mask-image: linear-gradient(
         to bottom,
         rgba(0, 0, 0, 1) 50%,
@@ -28,27 +29,49 @@
 }
 
 .friend-info {
-    margin-top: -60px;
+    margin-top: -44px;
+    width: 90%;
+    max-width: 500px;
+}
+
+.friend-description {
+    color: var(--main-light);
+    font-size: 16px;
 }
 
 .friend-title {
     color: var(--main-light);
-    font-size: 38px;
-    margin-top: 8px;
-    margin-bottom: 8px;
+    font-size: 30px;
+}
+
+.friend-text {
+    color: var(--main-light);
+    font-size: 16px;
+}
+
+.friend-fav {
+    color: var(--main-light);
+    font-size: 20px;
 }
 
 .friend-fab .ant-float-btn-body {
     background-color: var(--main-light);
 }
 
-.friend-user-icon {
+.friend-rating {
     color: var(--main-light);
-    font-size: 100px;
+    align-self: center;
+    margin-top: 16px;
+    margin-bottom: 16px;
 }
 
 .friend-rating {
+    opacity: 1;
+}
+
+.friend-rating .ant-rate-star-zero .ant-rate-star-second {
     color: var(--main-light);
+    opacity: 0.15;
 }
 
 .friend-message-icon {

@@ -1,4 +1,4 @@
-import '@fontsource/playfair-display'
+import '@fontsource/josefin-slab'
 
 import { ConfigProvider } from 'antd'
 import React from 'react'
