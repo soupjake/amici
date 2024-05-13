@@ -1,14 +1,11 @@
 {
     "name": "amici",
     "private": true,
-    "homepage": "https://soupjake.github.io/amici/",
     "version": "0.0.0",
     "type": "module",
     "scripts": {
         "dev": "vite",
         "build": "tsc && vite build",
-        "predeploy": "npm run build",
-        "deploy": "gh-pages -d build",
         "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
         "preview": "vite preview"
     },
@@ -16,7 +13,6 @@
         "@fontsource/josefin-slab": "^5.0.19",
         "@reduxjs/toolkit": "^2.2.3",
         "antd": "^5.16.5",
-        "gh-pages": "^6.1.1",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
         "react-redux": "^9.1.1",
