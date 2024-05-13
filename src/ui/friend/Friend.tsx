@@ -5,11 +5,9 @@ import { Flex, FloatButton, Rate, Typography } from 'antd'
 import { useState } from 'react'
 import { useParams } from 'react-router-dom'
 
-import carmen from '../../assets/carmen.jpg'
-import cus from '../../assets/cus.jpg'
-import sydney from '../../assets/sydney.jpg'
 import { useAppSelector } from '../../hooks/storeHooks'
 import { selectFriendById } from '../../store/selectors/friendSelectors'
+import { FriendImage } from '../shared/FriendImage'
 import { MessageModal } from './MessageModal'
 
 const { Text } = Typography
@@ -28,24 +26,15 @@ export const Friend = () => {
         setOpenMessage(true)
     }
 
-    const getImage = () => {
-        if (friend.image === 'carmen') {
-            return carmen
-        }
-
-        if (friend.image === 'cus') {
-            return cus
-        }
-
-        return sydney
-    }
-
     return (
         <>
             <Flex className="friend-container" justify="center">
                 <Flex vertical align="center" className="friend-view">
                     <Flex className="friend-image-view">
-                        <img className="friend-image" src={getImage()} />
+                        <FriendImage
+                            className="friend-image"
+                            image={friend.image}
+                        />
                     </Flex>
                     <Flex vertical className="friend-info">
                         <Flex justify="space-between">

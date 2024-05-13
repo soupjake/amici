@@ -1,0 +1,35 @@
+.favourites-container {
+    background-image: linear-gradient(
+        to bottom left,
+        #537670,
+        var(--main-dark),
+        #131510
+    );
+    min-height: 100vh;
+    min-width: 100vw;
+}
+
+.favourites-row {
+    padding: 32px;
+}
+
+.favourite-column {
+    margin-bottom: 32px;
+}
+
+.favourite-image {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 8px;
+}
+
+.favourite-text {
+    color: var(--main-light);
+}
+
+.favourite-icon {
+    color: var(--main-light);
+    margin-top: 8px;
+}

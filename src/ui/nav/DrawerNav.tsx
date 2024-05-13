@@ -44,7 +44,7 @@ export const DrawerNav = () => {
                         <SearchOutlined className="drawer-nav-light-icon" />
                         <Text className="drawer-nav-text">Search</Text>
                     </Link>
-                    <Link to="/" onClick={onClose}>
+                    <Link to="/favourites" onClick={onClose}>
                         <StarOutlined className="drawer-nav-light-icon" />
                         <Text className="drawer-nav-text">Favourites</Text>
                     </Link>
