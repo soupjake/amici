@@ -1,13 +1,7 @@
 .search-container {
-    background-image: linear-gradient(
-        to bottom left,
-        var(--main-light),
-        #f7fdfd,
-        #97a2a8
-    );
+    background-image: var(--main-light-gradient);
     padding-top: calc(50vh - 146px);
-    min-height: 100vh;
-    min-width: 100vw;
+    flex-grow: 1;
 }
 
 .search-view {
@@ -32,4 +26,8 @@
     border-radius: 6px;
     box-shadow: var(--main-shadow);
     width: 100%;
+}
+
+.ant-select-dropdown {
+    background-color: var(--main-light);
 }

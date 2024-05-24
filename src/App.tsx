@@ -19,6 +19,7 @@ export const App = () => {
 
     return (
         <>
+            <DrawerNav />
             <Routes>
                 <Route path="/">
                     <Route index element={<Search />} />
@@ -26,7 +27,6 @@ export const App = () => {
                     <Route path="/favourites" element={<Favourites />} />
                 </Route>
             </Routes>
-            <DrawerNav />
         </>
     )
 }

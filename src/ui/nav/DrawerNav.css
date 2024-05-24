@@ -1,36 +1,38 @@
 .drawer-nav-container {
-    position: absolute;
+    position: fixed;
     top: 0;
     right: 0;
     padding: 12px;
 }
 
-.drawer-nav-dark-icon {
-    color: var(--main-dark);
+.drawer-nav-sticky {
+    position: fixed;
+    top: 0;
 }
 
-.drawer-nav-light-icon {
-    color: var(--main-light);
+.drawer-nav-icon {
+    color: var(--main-dark);
+    position: sticky;
 }
 
 .drawer-nav-text {
-    color: var(--main-light);
+    color: var(--main-dark);
     margin-left: 8px;
 }
 
 .drawer-nav .ant-drawer-header {
-    background: var(--main-dark);
-    border-bottom-color: var(--main-light);
+    background: var(--main-dark-background);
+    border-bottom-color: var(--main-dark);
 }
 
 .drawer-nav .ant-drawer-title {
-    color: var(--main-light);
+    color: var(--main-dark);
 }
 
 .drawer-nav .ant-drawer-close {
-    color: var(--main-light);
+    color: var(--main-dark);
 }
 
 .drawer-nav .ant-drawer-body {
-    background: var(--main-dark);
+    background: var(--main-dark-background);
 }

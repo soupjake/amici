@@ -4,13 +4,21 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 
-    --main-dark: #263933;
-    --main-light: #fbfffe;
+    --main-light: #fbfbfb;
+    --main-dark: #1b1d18;
+    --main-dark-background: #a78f75;
     --main-shadow: 0 6px 16px 0 rgba(0, 0, 0, 0.08),
         0 3px 6px -4px rgba(0, 0, 0, 0.12), 0 9px 28px 8px rgba(0, 0, 0, 0.05);
+    --main-light-gradient: linear-gradient(
+        to bottom right,
+        var(--main-light),
+        var(--main-dark-background)
+    );
 }
 
 #root {
+    display: flex;
+    flex-direction: column;
     min-height: 100vh;
     min-width: 100vw;
 }

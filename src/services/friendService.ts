@@ -14,7 +14,7 @@ export function fetchFriends() {
                             image: 'carmen',
                             location: 'Chelsea',
                             expertise: 'Food & Beverage',
-                            operatingHours: '12-9',
+                            operatingHours: '12pm - 9pm',
                             online: true,
                         },
                         {
@@ -25,7 +25,7 @@ export function fetchFriends() {
                             image: 'cus',
                             location: 'Victoria',
                             expertise: 'Tailoring',
-                            operatingHours: '8-4',
+                            operatingHours: '8am - 4pm',
                             online: false,
                         },
                         {
@@ -36,7 +36,7 @@ export function fetchFriends() {
                             image: 'sydney',
                             location: 'Kensington',
                             expertise: 'Finance',
-                            operatingHours: '9-5',
+                            operatingHours: '9am - 5pm',
                             online: true,
                         },
                     ],

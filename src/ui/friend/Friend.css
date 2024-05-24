@@ -1,12 +1,6 @@
 .friend-container {
-    background-image: linear-gradient(
-        to bottom left,
-        #537670,
-        var(--main-dark),
-        #131510
-    );
-    min-height: 100vh;
-    min-width: 100vw;
+    background-image: var(--main-light-gradient);
+    flex-grow: 1;
 }
 
 .friend-view {
@@ -35,17 +29,17 @@
 }
 
 .friend-description {
-    color: var(--main-light);
+    color: var(--main-dark);
     font-size: 16px;
 }
 
 .friend-title {
-    color: var(--main-light);
+    color: var(--main-dark);
     font-size: 30px;
 }
 
 .friend-text {
-    color: var(--main-light);
+    color: var(--main-dark);
     font-size: 16px;
 }
 
@@ -58,7 +52,7 @@
 }
 
 .friend-icon {
-    color: var(--main-light);
+    color: var(--main-dark);
     font-size: 20px;
 }
 
@@ -67,7 +61,7 @@
 }
 
 .friend-rating {
-    color: var(--main-light);
+    color: var(--main-dark);
     align-self: center;
     margin-top: 16px;
     margin-bottom: 16px;
@@ -78,7 +72,7 @@
 }
 
 .friend-rating .ant-rate-star-zero .ant-rate-star-second {
-    color: var(--main-light);
+    color: var(--main-dark);
     opacity: 0.15;
 }
 
