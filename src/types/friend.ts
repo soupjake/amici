@@ -5,5 +5,7 @@ export type Friend = {
     rating: number
     image: string
     location: string
-    sector: string
+    expertise: string
+    operatingHours: string
+    online: boolean
 }

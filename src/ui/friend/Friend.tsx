@@ -1,7 +1,7 @@
 import './Friend.css'
 
-import { MessageOutlined, OpenAIOutlined, StarFilled } from '@ant-design/icons'
-import { Flex, FloatButton, Modal, Rate, Typography } from 'antd'
+import { MessageOutlined } from '@ant-design/icons'
+import { Flex, FloatButton, Modal } from 'antd'
 import TextArea from 'antd/es/input/TextArea'
 import { ChangeEvent, useState } from 'react'
 import { useParams } from 'react-router-dom'
@@ -9,8 +9,7 @@ import { useParams } from 'react-router-dom'
 import { useAppSelector } from '../../hooks/storeHooks'
 import { selectFriendById } from '../../store/selectors/friendSelectors'
 import { FriendImage } from '../shared/FriendImage'
-
-const { Text } = Typography
+import { FriendInfo } from './FriendInfo'
 
 export const Friend = () => {
     const { friendId } = useParams()
@@ -46,30 +45,7 @@ export const Friend = () => {
                             image={friend.image}
                         />
                     </Flex>
-                    <Flex vertical className="friend-info">
-                        <Flex justify="space-between">
-                            <Text className="friend-title">{friend.name}</Text>
-                            <StarFilled className="friend-fav" />
-                        </Flex>
-                        <Text className="friend-text">{friend.jobtitle}</Text>
-                        <Text className="friend-text">{friend.sector}</Text>
-                        <Text className="friend-text">{friend.location}</Text>
-                        <Rate
-                            disabled
-                            value={friend.rating}
-                            className="friend-rating"
-                            character={<OpenAIOutlined />}
-                        />
-                        <Text className="friend-description">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit, sed do eiusmod tempor incididunt ut labore et
-                            dolore magna aliqua. Ut enim ad minim veniam, quis
-                            nostrud exercitation ullamco laboris nisi ut aliquip
-                            ex ea commodo consequat. Duis aute irure dolor in
-                            reprehenderit in voluptate velit esse cillum dolore
-                            eu fugiat nulla pariatur.
-                        </Text>
-                    </Flex>
+                    <FriendInfo friend={friend} />
                 </Flex>
             </Flex>
             <FloatButton

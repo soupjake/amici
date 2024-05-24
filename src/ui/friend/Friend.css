@@ -49,7 +49,15 @@
     font-size: 16px;
 }
 
-.friend-fav {
+.friend-info-mb {
+    margin-bottom: 8px;
+}
+
+.friend-online {
+    width: 15px;
+}
+
+.friend-icon {
     color: var(--main-light);
     font-size: 20px;
 }
