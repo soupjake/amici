@@ -28,9 +28,9 @@
     max-width: 500px;
 }
 
-.friend-description {
+.friend-subtext {
     color: var(--main-dark);
-    font-size: 16px;
+    font-size: 14px;
 }
 
 .friend-title {
@@ -63,8 +63,6 @@
 .friend-rating {
     color: var(--main-dark);
     align-self: center;
-    margin-top: 16px;
-    margin-bottom: 16px;
 }
 
 .friend-rating {

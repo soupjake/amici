@@ -1,12 +1,6 @@
 .favourites-container {
-    background-image: linear-gradient(
-        to bottom left,
-        #537670,
-        var(--main-dark),
-        #131510
-    );
-    min-height: 100vh;
-    min-width: 100vw;
+    background-image: var(--main-light-gradient);
+    flex-grow: 1;
 }
 
 .favourites-row {
@@ -26,10 +20,10 @@
 }
 
 .favourite-text {
-    color: var(--main-light);
+    color: var(--main-dark);
 }
 
 .favourite-icon {
-    color: var(--main-light);
+    color: var(--main-dark);
     margin-top: 8px;
 }

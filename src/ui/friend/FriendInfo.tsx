@@ -50,24 +50,34 @@ export const FriendInfo = (props: Props) => {
                     onClick={onClickSocial('https://twitter.com')}
                 />
             </Flex>
-            <Flex justify="space-between" align="center">
+            <Flex
+                className="friend-info-mb"
+                justify="space-between"
+                align="center">
                 <Text className="friend-text">{friend.operatingHours}</Text>
                 <FriendOnline online={friend.online} />
             </Flex>
+            <Text className="friend-text friend-info-mb">
+                {friend.amiciFor}
+            </Text>
             <Rate
                 disabled
                 value={friend.rating}
-                className="friend-rating"
+                className="friend-rating friend-info-mb"
                 character={<OpenAIOutlined />}
             />
-            <Text className="friend-description">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                nulla pariatur.
+            <Text className="friend-text">Services</Text>
+            <Text className="friend-subtext friend-info-mb">
+                {friend.services}
             </Text>
+            {friend.promotions.length ? (
+                <>
+                    <Text className="friend-text">Promotions</Text>
+                    {friend.promotions.map((promotion) => (
+                        <Text className="friend-subtext">{`• ${promotion}`}</Text>
+                    ))}
+                </>
+            ) : null}
         </Flex>
     )
 }

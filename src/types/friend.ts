@@ -8,4 +8,7 @@ export type Friend = {
     expertise: string
     operatingHours: string
     online: boolean
+    amiciFor: string
+    services: string
+    promotions: string[]
 }

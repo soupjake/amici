@@ -16,6 +16,15 @@ export function fetchFriends() {
                             expertise: 'Food & Beverage',
                             operatingHours: '12pm - 9pm',
                             online: true,
+                            amiciFor: '2+ years',
+                            services:
+                                'I wanna cook for people and make them happy and hive them the best bacon on earth',
+                            promotions: [
+                                '50% bacon',
+                                'queue jump',
+                                'personalised swearing',
+                                'coupon: 123-BACON-456',
+                            ],
                         },
                         {
                             id: 'friend2',
@@ -27,6 +36,9 @@ export function fetchFriends() {
                             expertise: 'Tailoring',
                             operatingHours: '8am - 4pm',
                             online: false,
+                            amiciFor: '1 year',
+                            services: 'I wear suits now. Call me cus',
+                            promotions: [],
                         },
                         {
                             id: 'friend3',
@@ -38,6 +50,10 @@ export function fetchFriends() {
                             expertise: 'Finance',
                             operatingHours: '9am - 5pm',
                             online: true,
+                            amiciFor: '5 months',
+                            services:
+                                "Do I have access to $500 bucks? I absolutely do. I'm a 43 year old man",
+                            promotions: ['free $500', 'money laundering'],
                         },
                     ],
                 }),
