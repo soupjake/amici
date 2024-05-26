@@ -7,6 +7,7 @@ import {
 } from '@ant-design/icons'
 import { Flex, Rate, Typography } from 'antd'
 
+import map from '../../assets/map.jpg'
 import { Friend } from '../../types/friend'
 import { FriendOnline } from './FriendOnline'
 
@@ -78,6 +79,16 @@ export const FriendInfo = (props: Props) => {
                     ))}
                 </>
             ) : null}
+            <img className="friend-map" src={map} />
+            <Text className="friend-subtext">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </Text>
         </Flex>
     )
 }
