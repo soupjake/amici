@@ -25,7 +25,7 @@ export const FriendInfo = (props: Props) => {
     }
 
     return (
-        <Flex vertical className="friend-info">
+        <>
             <Flex justify="space-between">
                 <Text className="friend-title">{friend.name}</Text>
                 <StarFilled className="friend-icon" />
@@ -75,7 +75,9 @@ export const FriendInfo = (props: Props) => {
                 <>
                     <Text className="friend-text">Promotions</Text>
                     {friend.promotions.map((promotion) => (
-                        <Text className="friend-subtext">{`• ${promotion}`}</Text>
+                        <Text
+                            key={promotion}
+                            className="friend-subtext">{`• ${promotion}`}</Text>
                     ))}
                 </>
             ) : null}
@@ -89,6 +91,6 @@ export const FriendInfo = (props: Props) => {
                 nulla pariatur. Excepteur sint occaecat cupidatat non proident,
                 sunt in culpa qui officia deserunt mollit anim id est laborum.
             </Text>
-        </Flex>
+        </>
     )
 }

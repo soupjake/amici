@@ -16,10 +16,25 @@
     );
 }
 
+.friend-image-view-scrolled {
+    position: sticky;
+    top: 0;
+    mask-image: unset;
+}
+
 .friend-image {
     width: 100%;
     height: auto;
-    vertical-align: middle;
+    transition: border-radius 0.2s;
+}
+
+.friend-image-scrolled {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-top: 16px;
+    margin-bottom: 16px;
 }
 
 .friend-info {
@@ -27,6 +42,10 @@
     margin-bottom: 50px;
     width: 90%;
     max-width: 500px;
+}
+
+.friend-info-scrolled {
+    margin-top: 100px;
 }
 
 .friend-subtext {
