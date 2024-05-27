@@ -18,7 +18,7 @@ export const Friend = () => {
 
     useEffect(() => {
         const onScroll = () => {
-            if (window.innerHeight < 1090) {
+            if (window.innerHeight < 1150) {
                 setScrolled(window.scrollY > 0)
             }
         }
@@ -28,7 +28,7 @@ export const Friend = () => {
         return () => {
             window.removeEventListener('scroll', onScroll)
         }
-    }, [scrolled])
+    }, [])
 
     if (!friend) {
         return null

@@ -14,12 +14,15 @@
         rgba(0, 0, 0, 1) 66%,
         transparent 100%
     );
+    z-index: 1;
 }
 
 .friend-image-view-scrolled {
-    position: sticky;
+    position: fixed;
     top: 0;
     mask-image: unset;
+    width: 100%;
+    backdrop-filter: blur(5px);
 }
 
 .friend-image {
@@ -38,15 +41,15 @@
 }
 
 .friend-info {
+    position: relative;
     margin-top: -44px;
     margin-bottom: 50px;
     width: 90%;
     max-width: 500px;
-    z-index: -1;
 }
 
 .friend-info-scrolled {
-    margin-top: 92px;
+    margin-top: 226px;
 }
 
 .friend-subtext {
