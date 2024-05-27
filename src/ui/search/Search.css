@@ -1,5 +1,4 @@
 .search-container {
-    background-image: var(--main-light-gradient);
     padding-top: calc(50vh - 146px);
     flex-grow: 1;
 }

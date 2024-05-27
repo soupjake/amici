@@ -10,17 +10,17 @@ import { FriendImage } from '../shared/FriendImage'
 import { FriendInfo } from './FriendInfo'
 import { FriendMessage } from './FriendMessage'
 
-const SCROLL_THRESHOLD = 80
-
 export const Friend = () => {
     const { friendId } = useParams()
     const friend = useAppSelector(selectFriendById(friendId))
 
-    const [scrolled, setScrolled] = useState(window.scrollY > SCROLL_THRESHOLD)
+    const [scrolled, setScrolled] = useState(false)
 
     useEffect(() => {
         const onScroll = () => {
-            setScrolled(window.scrollY > SCROLL_THRESHOLD)
+            if (window.innerHeight < 1090) {
+                setScrolled(window.scrollY > 0)
+            }
         }
 
         window.addEventListener('scroll', onScroll)
@@ -28,7 +28,7 @@ export const Friend = () => {
         return () => {
             window.removeEventListener('scroll', onScroll)
         }
-    }, [])
+    }, [scrolled])
 
     if (!friend) {
         return null
@@ -39,6 +39,7 @@ export const Friend = () => {
             <Flex className="friend-container" justify="center">
                 <Flex vertical align="center" className="friend-view">
                     <Flex
+                        justify="center"
                         className={`friend-image-view ${scrolled ? 'friend-image-view-scrolled' : ''}`}>
                         <FriendImage
                             className={`friend-image ${scrolled ? 'friend-image-scrolled' : ''}`}

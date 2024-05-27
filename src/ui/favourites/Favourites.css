@@ -1,5 +1,4 @@
 .favourites-container {
-    background-image: var(--main-light-gradient);
     flex-grow: 1;
 }
 
