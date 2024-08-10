@@ -21,12 +21,12 @@
 }
 
 .search-autocomplete {
-    background: var(--main-light);
+    background: white;
     border-radius: 6px;
-    box-shadow: var(--main-shadow);
     width: 100%;
 }
 
 .ant-select-dropdown {
-    background-color: var(--main-light);
+    background-color: white;
+    box-shadow: none;
 }

@@ -1,59 +1,51 @@
 import './Friend.css'
 
 import { Flex } from 'antd'
-import { useEffect, useState } from 'react'
+import { UIEvent, useState } from 'react'
 import { useParams } from 'react-router-dom'
 
 import { useAppSelector } from '../../hooks/storeHooks'
 import { selectFriendById } from '../../store/selectors/friendSelectors'
-import { FriendImage } from '../shared/FriendImage'
+import { getFriendImage } from '../../utils/friendhelper'
+import { FriendBook } from './FriendBook'
 import { FriendInfo } from './FriendInfo'
-import { FriendMessage } from './FriendMessage'
 
 export const Friend = () => {
     const { friendId } = useParams()
     const friend = useAppSelector(selectFriendById(friendId))
 
-    const [scrolled, setScrolled] = useState(false)
-
-    useEffect(() => {
-        const onScroll = () => {
-            if (window.innerHeight < 1150) {
-                setScrolled(window.scrollY > 0)
-            }
-        }
-
-        window.addEventListener('scroll', onScroll)
-
-        return () => {
-            window.removeEventListener('scroll', onScroll)
-        }
-    }, [])
+    const [scrollValue, setScrollValue] = useState(0)
 
     if (!friend) {
         return null
     }
 
+    const onScroll = (event: UIEvent<HTMLDivElement>) => {
+        setScrollValue(event.currentTarget.scrollTop)
+    }
+
     return (
-        <>
-            <Flex className="friend-container" justify="center">
-                <Flex vertical align="center" className="friend-view">
-                    <Flex
-                        justify="center"
-                        className={`friend-image-view ${scrolled ? 'friend-image-view-scrolled' : ''}`}>
-                        <FriendImage
-                            className={`friend-image ${scrolled ? 'friend-image-scrolled' : ''}`}
-                            image={friend.image}
-                        />
-                    </Flex>
-                    <Flex
-                        vertical
-                        className={`friend-info ${scrolled ? 'friend-info-scrolled' : ''}`}>
-                        <FriendInfo friend={friend} />
-                    </Flex>
+        <Flex className="friend-container" justify="center">
+            <Flex
+                className="friend-view"
+                vertical
+                justify="flex-end"
+                style={{
+                    background: `url(${getFriendImage(friend.image)})`,
+                    backgroundRepeat: 'no-repeat',
+                    backgroundSize: '100%',
+                }}>
+                <Flex
+                    vertical
+                    className="friend-info"
+                    onScroll={onScroll}
+                    style={{
+                        height: `calc(50% + ${scrollValue}px)`,
+                    }}>
+                    <FriendInfo friend={friend} />
                 </Flex>
+                <FriendBook />
             </Flex>
-            <FriendMessage />
-        </>
+        </Flex>
     )
 }

@@ -1,11 +1,10 @@
 import './Friend.css'
 
-import { MessageOutlined } from '@ant-design/icons'
-import { FloatButton, Modal } from 'antd'
+import { Button, Modal } from 'antd'
 import TextArea from 'antd/es/input/TextArea'
 import { ChangeEvent, useState } from 'react'
 
-export const FriendMessage = () => {
+export const FriendBook = () => {
     const [openMessage, setOpenMessage] = useState(false)
     const [message, setMessage] = useState('')
 
@@ -24,15 +23,13 @@ export const FriendMessage = () => {
 
     return (
         <>
-            <FloatButton
-                className="friend-fab"
-                icon={
-                    <MessageOutlined
-                        className="friend-message-icon"
-                        onClick={onClickMessage}
-                    />
-                }
-            />
+            <Button
+                className="friend-book"
+                shape="round"
+                size="large"
+                onClick={onClickMessage}>
+                Book Now
+            </Button>
             <Modal
                 title="Message"
                 centered
