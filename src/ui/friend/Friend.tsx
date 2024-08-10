@@ -14,14 +14,14 @@ export const Friend = () => {
     const { friendId } = useParams()
     const friend = useAppSelector(selectFriendById(friendId))
 
-    const [scrollValue, setScrollValue] = useState(0)
+    const [scrolled, setScrolled] = useState(false)
 
     if (!friend) {
         return null
     }
 
     const onScroll = (event: UIEvent<HTMLDivElement>) => {
-        setScrollValue(event.currentTarget.scrollTop)
+        setScrolled(event.currentTarget.scrollTop > 0)
     }
 
     return (
@@ -37,11 +37,8 @@ export const Friend = () => {
                 }}>
                 <Flex
                     vertical
-                    className="friend-info"
-                    onScroll={onScroll}
-                    style={{
-                        height: `calc(50% + ${scrollValue}px)`,
-                    }}>
+                    className={`friend-info ${scrolled ? 'friend-info-scrolled' : ''}`}
+                    onScroll={onScroll}>
                     <FriendInfo friend={friend} />
                 </Flex>
                 <FriendBook />

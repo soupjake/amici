@@ -1,15 +1,16 @@
 import {
     FacebookOutlined,
     InstagramOutlined,
-    OpenAIOutlined,
     StarFilled,
     TwitterOutlined,
 } from '@ant-design/icons'
-import { Flex, Rate, Typography } from 'antd'
+import { Flex, Typography } from 'antd'
 
 import map from '../../assets/map.jpg'
 import { Friend } from '../../types/friend'
+import { FriendGallery } from './FriendGallery'
 import { FriendOnline } from './FriendOnline'
+import { FriendReviews } from './FriendReviews'
 
 const { Text } = Typography
 
@@ -61,12 +62,7 @@ export const FriendInfo = (props: Props) => {
             <Text className="friend-text friend-info-mb">
                 {friend.amiciFor}
             </Text>
-            <Rate
-                disabled
-                value={friend.rating}
-                className="friend-rating friend-info-mb"
-                character={<OpenAIOutlined />}
-            />
+            <FriendReviews rating={friend.rating} />
             <Text className="friend-text">Services</Text>
             <Text className="friend-subtext friend-info-mb">
                 {friend.services}
@@ -81,7 +77,7 @@ export const FriendInfo = (props: Props) => {
                     ))}
                 </>
             ) : null}
-            <img className="friend-map" src={map} />
+            <FriendGallery />
             <Text className="friend-subtext">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
@@ -91,6 +87,7 @@ export const FriendInfo = (props: Props) => {
                 nulla pariatur. Excepteur sint occaecat cupidatat non proident,
                 sunt in culpa qui officia deserunt mollit anim id est laborum.
             </Text>
+            <img className="friend-map" src={map} />
         </>
     )
 }

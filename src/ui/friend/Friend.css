@@ -8,17 +8,18 @@
 }
 
 .friend-info {
-    position: relative;
     background-color: var(--main-dark-background);
     padding: 32px;
+    padding-bottom: 52px;
     border-top-left-radius: 16px;
     border-top-right-radius: 16px;
-    overflow: auto;
     transition: height 0.1s linear;
+    height: 40vh;
+    overflow-y: scroll;
 }
 
 .friend-info-scrolled {
-    height: 80%;
+    height: 60vh;
 }
 
 .friend-subtext {
@@ -77,8 +78,35 @@
     color: var(--main-dark);
 }
 
+.friend-gallery {
+    padding-top: 16px;
+    padding-bottom: 24px;
+}
+
+.friend-gallery-image {
+    border-radius: 6px;
+    height: 300px;
+    object-fit: cover;
+}
+
 .friend-map {
-    border-radius: 2px;
+    border-radius: 6px;
     margin-top: 16px;
     margin-bottom: 16px;
+    height: 300px;
+    object-fit: cover;
+}
+
+.friend-review {
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+
+.ant-modal-content,
+.ant-modal-title {
+    background-color: var(--main-light-background) !important;
+}
+
+.slick-arrow {
+    color: white !important;
 }
