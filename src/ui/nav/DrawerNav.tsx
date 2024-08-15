@@ -7,7 +7,7 @@ import {
     StarOutlined,
 } from '@ant-design/icons'
 import { Drawer, Flex, Typography } from 'antd'
-import { useState } from 'react'
+import { useCallback, useState } from 'react'
 import { Link } from 'react-router-dom'
 
 const { Text } = Typography
@@ -15,13 +15,13 @@ const { Text } = Typography
 export const DrawerNav = () => {
     const [open, setOpen] = useState(false)
 
-    const onOpen = () => {
+    const onOpen = useCallback(() => {
         setOpen(true)
-    }
+    }, [])
 
-    const onClose = () => {
+    const onClose = useCallback(() => {
         setOpen(false)
-    }
+    }, [])
 
     return (
         <div className="drawer-nav-container">

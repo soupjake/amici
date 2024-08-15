@@ -3,7 +3,7 @@ import './Search.css'
 import { OpenAIOutlined } from '@ant-design/icons'
 import { AutoComplete, Flex, Typography } from 'antd'
 import { DefaultOptionType } from 'antd/es/select'
-import { useEffect, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 import { useAppSelector } from '../../hooks/storeHooks'
@@ -24,29 +24,35 @@ export const Search = () => {
         }
     }, [friends])
 
-    const onSearch = (value: string) => {
-        setOptions(() => {
-            if (value) {
-                return mapFriendsToOptions(
-                    friends.filter(
-                        (friend) =>
-                            friend.name
-                                .toLowerCase()
-                                .includes(value.toLowerCase()) ||
-                            friend.jobtitle
-                                .toLocaleLowerCase()
-                                .includes(value.toLowerCase()),
-                    ),
-                )
-            }
+    const onSearch = useCallback(
+        (value: string) => {
+            setOptions(() => {
+                if (value) {
+                    return mapFriendsToOptions(
+                        friends.filter(
+                            (friend) =>
+                                friend.name
+                                    .toLowerCase()
+                                    .includes(value.toLowerCase()) ||
+                                friend.jobtitle
+                                    .toLocaleLowerCase()
+                                    .includes(value.toLowerCase()),
+                        ),
+                    )
+                }
 
-            return mapFriendsToOptions(friends)
-        })
-    }
+                return mapFriendsToOptions(friends)
+            })
+        },
+        [friends],
+    )
 
-    const onSelect = (friendId: string) => {
-        navigate(`/friend/${friendId}`)
-    }
+    const onSelect = useCallback(
+        (friendId: string) => {
+            navigate(`/friend/${friendId}`)
+        },
+        [navigate],
+    )
 
     return (
         <Flex className="search-container" align="start" justify="center">

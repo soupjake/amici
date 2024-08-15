@@ -1,6 +1,6 @@
 import { OpenAIOutlined } from '@ant-design/icons'
 import { Flex, Modal, Rate, Typography } from 'antd'
-import { useMemo, useState } from 'react'
+import { useCallback, useMemo, useState } from 'react'
 
 const { Text } = Typography
 
@@ -31,36 +31,46 @@ export const FriendReviews = (props: Props) => {
         [],
     )
 
-    const onClick = () => {
+    const onClick = useCallback(() => {
         setShow(true)
-    }
+    }, [])
 
-    const onCancel = () => {
+    const onCancel = useCallback(() => {
         setShow(false)
-    }
+    }, [])
+
+    const renderReviews = useMemo(
+        () =>
+            reviews.map((review, index) => (
+                <Flex vertical>
+                    <Rate
+                        disabled
+                        value={review.rating}
+                        className="friend-rating friend-review"
+                        character={<OpenAIOutlined />}
+                    />
+                    <Text>{review.review}</Text>
+                    <Text className="friend-review-index">{`${index + 1} out of 42`}</Text>
+                </Flex>
+            )),
+        [reviews],
+    )
 
     return (
         <>
-            <Flex justify="center" onClick={onClick}>
+            <Flex vertical justify="center" align="center">
                 <Rate
                     disabled
                     value={rating}
                     className="friend-rating friend-info-mb"
                     character={<OpenAIOutlined />}
                 />
+                <Text className="friend-rating-link" onClick={onClick}>
+                    42 reviews
+                </Text>
             </Flex>
             <Modal title="Reviews" open={show} footer={[]} onCancel={onCancel}>
-                {reviews.map((review) => (
-                    <Flex vertical>
-                        <Rate
-                            disabled
-                            value={review.rating}
-                            className="friend-rating friend-review"
-                            character={<OpenAIOutlined />}
-                        />
-                        <Text>{review.review}</Text>
-                    </Flex>
-                ))}
+                {renderReviews}
             </Modal>
         </>
     )

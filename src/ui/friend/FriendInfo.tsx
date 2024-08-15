@@ -5,6 +5,7 @@ import {
     TwitterOutlined,
 } from '@ant-design/icons'
 import { Flex, Typography } from 'antd'
+import { useCallback } from 'react'
 
 import map from '../../assets/map.jpg'
 import { Friend } from '../../types/friend'
@@ -21,9 +22,12 @@ type Props = {
 export const FriendInfo = (props: Props) => {
     const { friend } = props
 
-    const onClickSocial = (url: string) => () => {
-        window.open(url, '_blank', 'noopener,noreferrer')
-    }
+    const onClickSocial = useCallback(
+        (url: string) => () => {
+            window.open(url, '_blank', 'noopener,noreferrer')
+        },
+        [],
+    )
 
     return (
         <>

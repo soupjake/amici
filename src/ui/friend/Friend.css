@@ -7,19 +7,37 @@
     width: 100%;
 }
 
+.friend-image {
+    position: absolute;
+    top: 0;
+    height: auto;
+    object-fit: cover;
+    width: 100%;
+}
+
+.friend-image-scrolled {
+    top: 1rem;
+    border-radius: 50%;
+    object-fit: cover;
+    width: 20vh;
+    height: 20vh;
+    transition: border-radius 0.2s ease;
+}
+
 .friend-info {
     background-color: var(--main-dark-background);
     padding: 32px;
     padding-bottom: 52px;
     border-top-left-radius: 16px;
     border-top-right-radius: 16px;
-    transition: height 0.1s linear;
+    transition: height 0.2s ease;
     height: 40vh;
     overflow-y: scroll;
+    z-index: 1;
 }
 
 .friend-info-scrolled {
-    height: 60vh;
+    height: calc(80vh - 7.25rem);
 }
 
 .friend-subtext {
@@ -58,15 +76,18 @@
     border: none;
     width: 300px;
     align-self: center;
+    z-index: 2;
 }
 
 .friend-rating {
     color: var(--main-dark);
     align-self: center;
+    opacity: 1;
 }
 
-.friend-rating {
-    opacity: 1;
+.friend-rating-link {
+    text-decoration: underline;
+    cursor: pointer;
 }
 
 .friend-rating .ant-rate-star-zero .ant-rate-star-second {
@@ -100,6 +121,10 @@
 .friend-review {
     margin-top: 16px;
     margin-bottom: 16px;
+}
+
+.friend-review-index {
+    text-align: right;
 }
 
 .ant-modal-content,
