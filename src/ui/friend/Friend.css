@@ -2,6 +2,16 @@
     flex-grow: 1;
 }
 
+@media (max-width: 600px) {
+    .friend-container {
+        background-color: var(--main-light-background);
+    }
+
+    .friend-info {
+        background-color: var(--main-light-background);
+    }
+}
+
 .friend-view {
     max-width: 600px;
     width: 100%;
@@ -134,4 +144,14 @@
 
 .slick-arrow {
     color: white !important;
+}
+
+@media (max-width: 600px) {
+    .friend-container {
+        background-color: var(--main-light-background);
+    }
+
+    .friend-info {
+        background-color: var(--main-light-background);
+    }
 }
